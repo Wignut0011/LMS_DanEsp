@@ -372,7 +372,6 @@ h2{
   right:0px;
 }
 #TeamsTable{
-  height: 75vh;
   vertical-align: middle;
 }
 #ScheduleTable{
@@ -390,6 +389,8 @@ h2{
   transition: .5s;
 }
 .table-hover tbody tr th{
+  padding-top: .75rem;
+  padding-bottom: .75rem;
   transition: .3s;
 }
 .table-hover thead:hover th{
@@ -442,9 +443,6 @@ h2{
   }
   .schedule-title-fix{    
     margin-top:0;
-  }
-  #TeamsTable{
-    height:auto;
   }
 }
 
