@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Superbase Legue</title>    
+    <link rel="icon" href="img/head_icon.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/ejs@3.1.6/ejs.min.js"></script>    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/c6e6b4e489.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body>
+    <!---------------Header Nav----------------->
+    <section id="page_header">
+    <nav class="navbar navbar-expand-lg fixed-top">   
+      <div class="container" id="header">
+        <div class="navbar-header" id="logo-banner">                              
+          <div class="navbar-brand">
+            <img class="img-fluid" id="logo-img" src="img/baseball.svg" alt="Logo"> Superbase
+          </div>                  
+        </div> 
+        <button class="navbar-toggler align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+          <span class="navbar-toggler-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="30" height="30"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g transform="translate(0.516,0.516) scale(0.994,0.994)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#ffffff" stroke="#cccccc" stroke-linejoin="round"><path d="M21.5,35.83333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333c0,7.88333 -6.45,14.33333 -14.33333,14.33333h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333z"></path><path d="M150.5,86c0,7.88333 -6.45,14.33333 -14.33333,14.33333h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333z"></path><path d="M150.5,136.16667c0,7.88333 -6.45,14.33333 -14.33333,14.33333h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333z"></path></g><path d="M0,172v-172h172v172z" fill="none" stroke="none" stroke-linejoin="miter"></path><g fill="#ffffff" stroke="none" stroke-linejoin="miter"><path d="M35.83333,50.16667h14.33333h86c7.88333,0 14.33333,-6.45 14.33333,-14.33333c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333h-86h-14.33333c-7.88333,0 -14.33333,6.45 -14.33333,14.33333c0,7.88333 6.45,14.33333 14.33333,14.33333z"></path><path d="M136.16667,71.66667h-21.5h-78.83333c-7.88333,0 -14.33333,6.45 -14.33333,14.33333c0,7.88333 6.45,14.33333 14.33333,14.33333h78.83333h21.5c7.88333,0 14.33333,-6.45 14.33333,-14.33333c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333z"></path><path d="M136.16667,121.83333h-43h-57.33333c-7.88333,0 -14.33333,6.45 -14.33333,14.33333c0,7.88333 6.45,14.33333 14.33333,14.33333h57.33333h43c7.88333,0 14.33333,-6.45 14.33333,-14.33333c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333z"></path></g><path d="" fill="none" stroke="none" stroke-linejoin="miter"></path></g></g></svg>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="nav-menu">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="home_tab" data-bs-toggle="tab" data-bs-target="#home_content">Home</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="teams_tab" data-bs-toggle="tab" data-bs-target="#team_content">Teams</button>          </li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="about_tab" data-bs-toggle="tab" data-bs-target="#about_content">About</button>          </li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="watch_tab" data-bs-toggle="tab" data-bs-target="#watch_content">Watch</button></li>
+          <!--Later
+          
+          <li class="nav-item" role="presentation"><button class="nav-link" id="vote_tab" data-bs-toggle="tab" data-bs-target="#vote_content">Vote</button>
+          
+          -->
+        </ul>
+        </div>
+      </div>
+    </nav>     
+    </section>
+
+    
+<!---------------PAGE ASIDE (SIDEBAR)----------------->    
+    <section id=" page_sidebar">
+      <aside>
+        <button class="btn aside-btn top-50" type="button" onclick="ShowPanel()" aria-hidden="true" aria-expanded="false">
+          <i class="fa-solid fa-angles-right rounded-circle"></i>
+        </button>
+        <div class="sidepanel top-25" id="sidebar-content">
+          <button class="btn aside-close" type="button" onclick="HidePanel()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+              <div class="aside-contents">
+              <h3 class="text-white text-center">UPCOMING DATES</h1>                
+              <table class="table table-aside base-container">
+                <thead>                  
+                </thead>
+                <tbody class="text-center">
+                  <tr>
+                    <th>FL vs UT</th>
+                    <th>4/14</th>
+                  </tr>
+
+                  <tr>
+                    <th>WI vs NE</th>
+                    <th>4/18</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>NV vs MS</th>
+                    <th>4/21</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>CA vs NY</th>
+                    <th>5/9</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>ID vs SD</th>
+                    <th>5/10</th>
+                  </tr>
+                  <tr>
+                    <th>ND vs NC</th>
+                    <th>5/11</th>
+                  </tr>
+                  <tr>
+                    <th>OH vs MN</th>
+                    <th>5/12</th>
+                  </tr>
+                  <tr>
+                    <th>TN vs OK</th>
+                    <th>12/19</th>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+        </div>
+      </aside>
+    </section>
+
+<!---------------TAB CONTENT----------------->    
+    <section id="page_content">
+      <div class="tab-content" id="main-page">
+
+        
+<!---------------MAIN PAGE----------------->
+        <div class="tab-pane fade show active" id="home_content" role="tabpanel">      
+          <div class="bg-image bg-elem" id="home_bg"></div>
+          <div class="bg-dim bg-elem"></div>
+          <div class="container-fluid">
+          <div class="row row-col-auto align-items-center flex-wrap-reverse me-0 main-section">
+            <div class = "col-lg-2 sidebase"><div class="position-static">
+              <div class="row row-col-2 text-center div-pad">
+                <div class="col-md sidecontent">
+                  <div class="row n-size">
+                    <h4 class="">Last Game</h4>
+                  </div>
+                  <div class="row n-size">
+                    <p> OH 15 | DC 7</p>
+                  </div>
+                </div>
+                <div class="col-md sidecontent">
+                  <div class="row">
+                    <h4>Upcoming</h4>
+                  </div>
+                  <div class="row n-size">
+                    <p>FL vs UT<br>WI vs NE</p>
+                  </div>
+                </div>                
+              </div></div>
+            </div>                  
+            <div class = "col-lg mainbase">
+              <div class="container">
+                <div class="row">
+                  <h1 class="text-center title">It's that time of year again!</h1>
+                </div>
+                <div class="row p-5">
+                  <div class="col d-inline-flex justify-content-center">
+                    <div class="ratio ratio-16x9">
+                      <iframe class="shadow-lg" src="https://www.youtube-nocookie.com/embed/wHr8NxA8raw?controls=0&amp;start=5" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h4 class="text-center descript">It's time to determine which zip code is best at hitting and throwing a white leather ball! Watch as these buff dudes run around in a diamond after they hit the ball! Super Bowl? Our legue isn't clickbait! we don't have empty promises of better then average bowls. Only bases!</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-col-2 justify-content-center inbetweener main-section div-pad" id="rules">
+            <div class = "col">
+              <div class="container">
+                <div class = "row">
+                  <div class="col-lg-5 align-self-center text-center rule-title">
+                    <h1 class="title">THE RULES ARE SIMPLE</h1>
+                  </div>              
+                  <div class="col-lg-7 align-items-center">
+                    <div class="row align-items-center">
+                      <div class="col da-rule">
+                        <h4>Hit the ball</h4>
+                      </div>
+                      <div class="col da-pic">
+                        <img style="width:96px;height:96;" src="https://img.icons8.com/fluency-systems-regular/96/000000/baseball-player.png" alt="Player"/>
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col da-rule">
+                        <h4>Run to the base</h4>
+                      </div>
+                      <div class="col da-pic">
+                        <img src="https://img.icons8.com/fluency-systems-regular/96/000000/running.png"/>
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col da-rule">
+                        <h4>Avoid the homing missle</h4>
+                      </div>
+                      <div class="col da-pic">
+                        <img style="width:96px;height:96;" src="https://img.icons8.com/fluency-systems-regular/96/000000/asteroid--v3.png" alt="Missle"/>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="row main-section">
+            <div class="row justify-content-center" id="invitation">
+              <h1 class="text-center title whoosh">EXPERIENCE THE TERROR!</h1>            
+            </div>          
+          <div class="row row-col-auto mb-0 main-section">
+            <div class="col-md-12 text-center">
+                            <img class="img-fluid img-thumbnail" id="TruckIMG" style="max-width:60vw;" src="img/elements/TheTerror.png" title="Player Making a Deadly Move" alt="Game">
+            </div>
+          </div>
+          <div class="row main-section">
+            <h4 class="text-center descript">Superbase is a fun game in person! It will hit on all of your emotional triggers such as exhilaration, aggression, frustration, and self-control.
+            </h4>     
+          </div>
+
+           <div class="row h5 about-quote main-section">
+            <blockquote>"The action was intense! Definitally going to watch the next match with my Superbase Superball Superplush™"</blockquote>
+            <figcaption class="text-white blockquote-footer">A totally real testimonial that we did not pay for</figcaption>
+          </div>
+            
+          <div class="row main-section">
+            <p><br><br>
+              <small>*All profile pictures were gererated via the AI <a href="https://this-person-does-not-exist.com/en">This Person Does Not Exist</a> and are not real individuals
+              <br>*All team logos were generated via <a href="https://zyro.com/logo-maker">Zyro's Logo generator</a> and are not real logos
+              <br>*The About section and Home section were partially generated via <a href="https://app.inferkit.com/demo">Talk To Transformer AI</a> with only small variations to keep in line with the baseball theme</small>
+            </p>                        
+            <a href="https://icons8.com/icon/RCJ51kxEGCe1/baseball-player">Baseball Player icon by Icons8</a>
+            <a href="https://icons8.com/icon/3DvjCzkvOfti/running">Running icon by Icons8</a>
+            <a href="https://icons8.com/icon/JtenbYqP75Ta/asteroid">Asteroid icon by Icons8</a>
+          </div>
+        </div>
+      </div>   
+      </div>
+
+      
+<!---------------TEAM PAGE----------------->
+
+      
+      <div class="tab-pane fade" id="team_content" role="tabpanel">
+        <!--Teams Page-->
+        <div class="bg-image bg-elem" id="team_bg"></div>
+        <div class="bg-dim bg-elem"></div>  
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-7">
+        <div class="container main-section" id="container-TeamsPage"></div>
+            </div>
+        <div class="col-xl-5">
+          <div class="container base-table" id="schedule">
+            <div class="row main-section rule-title schedule-title-fix">
+              <div class="table-responsive flex-grow-1">
+              <h1 class="fs-3 schedule-title">Schedule - Bracket II</h1>                
+                
+              <table class="table table-sm base-container" id="ScheduleTable">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col" colspan="2">Home</th>
+                    <th scope="col" colspan="2">Away</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody class="text-center">
+                  <tr>
+                    <th>FL</th>
+                    <th>Greasy Humming Birds</th>
+                    <th>UT</th>
+                    <th>Venemous Gamers</th>
+                    <th>4/14</th>
+                  </tr>
+
+                  <tr>
+                    <th>WI</th>
+                    <th>Forgetful Hamsters</th>
+                    <th>NE</th>
+                    <th>Witty Tadpols</th>
+                    <th>4/18</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>NV</th>
+                    <th>Spiky Lizards</th>
+                    <th>MS</th>
+                    <th>Hustlin' Dancers</th>
+                    <th>4/21</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>CA</th>
+                    <th>Naughty Raptors</th>
+                    <th>NY</th>
+                    <th>Skeleton Nets</th>
+                    <th>5/9</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>ID</th>
+                    <th>Exalted Waves</th>
+                    <th>SD</th>
+                    <th>Baby Hawks</th>
+                    <th>5/10</th>
+                  </tr>
+                  <tr>
+                    <th>ND</th>
+                    <th>Polar Dawgs</th>
+                    <th>NC</th>
+                    <th>Psychodelic Eagles</th>
+                    <th>5/11</th>
+                  </tr>
+                  <tr>
+                    <th>OH</th>
+                    <th>Gruesome Koalas</th>
+                    <th>MN</th>
+                    <th>Brisk Bullets</th>
+                    <th>5/12</th>
+                  </tr>
+                  <tr>
+                    <th>TN</th>
+                    <th>Renowned Mavericks</th>
+                    <th>OK</th>
+                    <th>Lady Lions</th>
+                    <th>12/19</th>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      
+<!---------------ABOUT PAGE----------------->
+
+      
+      <div class="tab-pane fade" id="about_content" role="tabpanel">
+        <!--About Page-->
+        <div class="bg-image bg-elem" id="about_bg"></div>
+        <div class="bg-dim bg-elem"></div>
+        <div class="container-fluid align-items-center text-white">
+          <!--Main-->
+          <div class="row main-section justify-content-center">
+            <h1 class="title text-center whoosh">THE BEGINNING</h1>
+          </div>
+
+          <div class="container">
+          <div class="row main-section">            
+            <div class="col-md-7 div-pad align-self-center">
+              <h4 class="text-start about-text descript">Superbase was created by John Base. John Base was born on the 25th of July 1982. He had his first success in 2003 with his university newspaper "House". "House" was published every two weeks during the academic year, with a total of 36 issues. He majored in design, but failed to get a job in the field due to him being born without thumbs. This was a blow for him, and this is when he first got the idea for Superbase.</h4>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-md-3 text-end div-pad about-text">
+              <div class="row"><img class="img-thumbnail img-fluid" src="img/elements/JohnBase.jpg" title="John Base" alt="John Base Photo"></div>
+              <div class="row d-inline-flex base-container"><figcaption class="text-white blockquote-footer">John Base -2013</figcaption></div>
+            </div>
+          </div>
+            </div>
+
+          <div class="row h5 about-quote">
+            <blockquote>"Oi! You don' have thumbs, mate. 'ow are you gonna draw buildings without them thumbs?"</blockquote>
+            <figcaption class="text-white blockquote-footer">Someone with thumbs</figcaption>
+          </div>
+
+          <div class="container">
+          <div class="row main-section">
+            <div class="col-md-4 div-pad about-text">
+              <div class="row"><img class="img-thumbnail img-fluid" src="img/elements/2014.jpg" title="San Fransico 1835" alt="City"></div>
+              <div class="row d-inline-flex base-container">
+                <figcaption class="text-white blockquote-footer">Downtown Detroit -2017</figcaption>
+              </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-md-7 div-pad align-self-center"><h4 class="text-end about-text descript">Supebase was inspired on a nice summer evening in 1958. John Base was walking home after his shift at the horse-glue factory, when he witnessed an old lady chasing a crying man in a Baseball uniform while screaming. The sheer insanity of what he was witnessing was indescribable. How did this happen? Why did this happen? Why was this man wearing a baseball uniform? This prompted John to explore how a game can combine social immersion, baseballs, and a healthy amount of tears. </h4></div>
+          </div>
+            </div>
+
+          <div class="row main-section justify-content-center">
+            <h1 class="title text-center whoosh">THE GAME</h1>
+          </div>
+
+          <div class="row row-col-auto main-section">
+            <div class="col-1"></div>
+            <div class="col-md-10 text-center">
+              <img class="img-fluid img-thumbnail" src="img/elements/rocket.png" title="Player narrowly escaping the homing missle" alt="Game">
+            </div>
+            <div class="col-1"></div>
+          </div>
+
+          <div class="container">
+          <div class="row main-section">
+            <h4 class="text-center descript">While Superbase might look like ordinary Baseball on the surface, it plays much quicker due to the homing missiles. The ball is dead, so it is the batter's objective to reach second base while shooting those missiles to reach home. Do not be surprised if the bullets find an unexpected route! The faster the team scores, the more damage they can do to their opponents. When the batter hit's a home run, he "gets away" with more danger. After his "stolen base", there are two more chances to reach home with more explosions.<br><br>Will the Superbase last until the last inning? Or will they be eaten by t͠͏̕h̶̴̢͟e҉͜҉ ̷̸̧͝d́҉a̢҉r̴̶͘͞k̷̷̨̢̕ ̵̸̀o͏̷̶͝n҉̨͡e͟͟͞͠ş̸̡͠ ?</h4>
+          </div>
+            </div>
+
+          <div class="row main-section justify-content-center">
+            <h1 class="title text-center whoosh">PLEASE HELP ME</h1>
+          </div>
+          
+          <div class="container">
+          <div class="row main-section text-center descript">
+            <h4>They hired me as an intern to write the about page of the website. I'm not allowed to leave the office until I finish. I haven't seen the outside for days and I still don't know how this game is even played! I am not even sure John Base is even a real person, no one has ever seen the guy. His office is just a pitch black room. It's so dark, I can't even see where the room ends. The only image of him is weird. I think it's a generated image. I mean, look at the background! I'm just going to use an ai to write this page. I don't care anymore. I just want to see the sunlight again.</h4>
+          </div>
+          </div>
+        </div>  
+      </div>
+
+      
+<!---------------WATCH PAGE----------------->
+
+      
+      <div class="tab-pane fade" id="watch_content" role="tabpanel">
+        <!--Teams Page-->
+        <div class="bg-image bg-elem" id="watch_bg"></div>    
+        <div class="container align-items-center">
+          <!--Main-->
+          <div class="row">
+              
+          </div>
+          
+        </div>  
+      </div>
+
+      
+<!---------------VOTE PAGE-----------------
+
+      
+      <div class="tab-pane fade" id="vote_content" role="tabpanel">
+        <div class="bg-image bg-elem" id="vote_bg"></div>    
+        <div class="bg-dim bg-elem"></div>
+        <div class="container align-items-center">
+
+          <div class="row"></div>
+        </div>  
+      </div>
+    </div>
+-->
+      
+      
+    </section>    
+    <section id="page_footer">
+      <div class="container-fluid bg-black div-pad" id="footer">
+        <div class="container">
+          <footer class="row row-cols-auto flex-nowrap text-muted justify-content-between">
+            <div class="col border-end"><small>© Someone 2022</small></div>
+            <div class="col flex-wrap">
+            <div class="row row-cols-auto flex-wrap">            
+              <div class="col"><a href="/" class="text-muted">privacy</a></div>
+              <div class="col"><a href="https://www.youtube.com/watch?v=QKLaCptPpoo" class="text-muted">about</a></div>
+              <div class="col"><a href="https://www.youtube.com/watch?v=dpgGxi94tsw" class="text-muted">contact</a></div>
+            </div>
+            </div>
+          </footer>
+        </div>
+      </div> 
+    </section>
+<div class="modal super-modal" id="teamModal" aria-hidden="true" style="display: none">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img class="img-fluid rounded-circle modal-pic" src="" width="50" height="50">
+        <h5 class="modal-title w-100"></h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body">
+        If you are reading this, something went horribly wrong with page-view.bindWrapperEvents
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn super-btn-no" data-bs-dismiss="modal">What? No!</button>
+        <button type="button" class="btn super-btn" id="banish-button" data-bs-dismiss="modal">They Know What They Did</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+  <!--------------Scripts----------------->    
+    <script src="js/animations.js"></script>
+    <script src="js/MVC/Model/team_data.js"></script>
+    <script src="js/MVC/Model/team_view_model.js"></script>
+    <script src="js/MVC/Model/local_view_model.js"></script>
+    <script src="js/MVC/Model/local_storage_service.js"></script>    
+    <script src="js/MVC/View/page_view.js"></script>
+    <script src="js/MVC/Controller/appController.js"></script>
+    <script>    
+      $(document).ready(function(){          
+        (async () => {
+          app = new AppController(appViewModel); 
+          await app.render();
+        })();
+      })
+    </script>
+  </body>  
+</html>

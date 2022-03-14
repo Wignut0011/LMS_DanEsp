@@ -1,0 +1,27 @@
+
+  <div class="row">
+    <div class="col-9 col-lg self-end">
+      <h1 class="fs-3 title-team"><%=view.topText%></h1>      
+    </div>
+    
+    <div class="col-3 col-sm text-end">
+      <div class="search-bar">
+      <input class="table-search align-middle form-control" id="search-text" placeholder="Search...">
+      <button class="btn super-btn fw-bold" id="search-clear">Clear</button>
+      </div>
+    </div>    
+  </div>
+
+  <div class="row">
+    <div class="container table-responsive" id="container-TeamsTable">  </div>
+    <div class="col-8 col-sm text-start">
+      <div class="super-alert" id="<%=view.alertID%>"></div>
+    </div>
+    <div class="col-auto col-sm text-end">
+      <button type="button" class="btn super-btn fw-bold" id="reset-btn">Retrieve Teams</button>    
+    </div>
+  </div>
+
+<!--The modal was causing issues with the backdrop being over the modal; even after editing it's z-index value. So I just put it in the bottom of the index and edit it with Jquery in an event handler since there as no reason to generate it like this.-->
+
+</div>
