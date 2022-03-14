@@ -7,8 +7,8 @@ var teamViewModel = {
   tableContainerID: "container-TeamsTable", //Container for the table itself
   tableContainerClass: "container",
 
-  wrapperEJS: "js/MVC/ejs/wrapper_view.ejs", //Template for the container
-  tableEJS: "js/MVC/ejs/table_view.ejs", //Template for the table
+  wrapperEJS: "js/MVC/View/ejs/wrapper_view.ejs", //Template for the container
+  tableEJS: "js/MVC/View/ejs/table_view.ejs", //Template for the table
 
   modalID:"teamModal", //The model
   alertID: "alert-PopUp", //The alert
