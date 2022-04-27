@@ -1,6 +1,8 @@
 { pkgs }: {
   deps = [
-    pkgs.nodePackages.vscode-langservers-extracted
-    pkgs.nodePackages.typescript-language-server
+    pkgs.sass
+    pkgs.nodejs-16_x
+      pkgs.nodePackages.vscode-langservers-extracted
+      pkgs.nodePackages.typescript-language-server
   ];
 }
