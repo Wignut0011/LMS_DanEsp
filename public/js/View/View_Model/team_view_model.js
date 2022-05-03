@@ -102,7 +102,7 @@ var teamViewModel = {
         label: "id",
         name: "id",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["id","edit-id"],["name","id"],["tag","input"]
         ],
         other:{
@@ -115,13 +115,13 @@ var teamViewModel = {
       
       {
         form:"both",
-        colLength:"8",
+        colLength:"col-sm-8",
         newLine: false,
         id:"edit-name",
         label: "Name",
         name: "TeamName",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","text"],["id","edit-name"],["name","TeamName"],["class","form-control"]
         ],
         validate:{
@@ -132,18 +132,15 @@ var teamViewModel = {
 
       {
         form:"both",
-        colLength:"3",
+        colLength:"col-sm-4",
         newLine: false,
         id:"edit-state",
         label: "ST",
         name: "State",
         tag: "select",
-        _attributes:[
-          ["id","edit-state"],["name","State"],["class","form-select"]
-        ],
-        options:[ //Use for value and text
-          'Sel', 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' 
-        ],
+        attributes:[
+          ["id","edit-state"],["name","State"],["class","form-select"],["style","max-width:fit-content"]
+        ],      
         validate:{
           required: true,
           message: "Select their home state"
@@ -153,12 +150,12 @@ var teamViewModel = {
       {
         form:"both",
         id:"edit-coach",
-        colLength:"6",
-        newLine: true,
+        colLength:"col-sm-6",
+        newLine: false,
         label: "Coach",
         name: "Coach",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","text"],["id","edit-coach"],["name","Coach"],["class","form-control"]
         ],
         validate:{
@@ -169,13 +166,13 @@ var teamViewModel = {
 
       {
         form:"both",
-        colLength:"6",
+        colLength:"col-sm-6",
         newLine: false,
         id:"edit-MVP",
         label: "MVP",
         name:"MVP",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","text"],["id","edit-MVP"],["name","MVP"],["class","form-control"]
         ],
         validate:{
@@ -187,13 +184,13 @@ var teamViewModel = {
       
       {
         form:"add",
-        colLength:"4",
-        newLine: true,
+        colLength:"col-7 col-sm-4",
+        newLine: false,
         id:"edit-player",
         label: "Players",
         name: "RemainingPlayers",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","number"],["id","edit-player"],["name","RemainingPlayers"],["min","1"],["max","100"],["class","form-control"],["placeholder","0-100"]
         ],
         validate:{
@@ -204,13 +201,13 @@ var teamViewModel = {
 
       {
         form:"edit",
-        colLength:"4",
-        newLine: true,
+        colLength:"col-7 col-sm-4",
+        newLine: false,
         id:"edit-remain",
         label: "Remaining",
         name: "RemainingPlayers",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","number"],["id","edit-remain"],["name","RemainingPlayers"],["min","0"],["max","100"],["class","form-control"],["placeholder","0-100"]
         ],
         validate:{
@@ -221,13 +218,13 @@ var teamViewModel = {
 
       {
         form:"edit",
-        colLength:"4",
+        colLength:"col-6 col-sm-4",
         newLine: false,
         id:"edit-penalties",
         label: "Penalties",
         name: "Penalties",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","number"],["id","edit-penalties"],["name","Penalties"],["min","0"],["max","9999"],["class","form-control"],["placeholder","0-9999"]
         ],
         validate:{
@@ -238,13 +235,13 @@ var teamViewModel = {
 
       {
         form:"edit",
-        colLength:"4",
+        colLength:"col-7 col-sm-4",
         newLine: false,
         id:"edit-homerun",
         label: "Homeruns",
         name: "TotalHomeruns",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","number"],["id","edit-homerun"],["name","TotalHomeruns"],["min","0"],["max","9999"],["class","form-control"],["placeholder","0-9999"]
         ],
         validate:{
@@ -255,13 +252,13 @@ var teamViewModel = {
 
       {
         form:"edit",
-        colLength:"5",
-        newLine: true,
+        colLength:"col-7 col-sm-5",
+        newLine: false,
         id:"edit-missiles",
         label: "Missiles Thwarted",
         name: "MissilesThwarted",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","number"],["id","edit-missiles"],["name","MissilesThwarted"],["min","0"],["max","9999"],["class","form-control"],["placeholder","0-9999"]
         ],
         validate:{
@@ -272,13 +269,13 @@ var teamViewModel = {
 
       {
         form:"edit",
-        colLength:"4",
+        colLength:"col-6 col-sm-4",
         newLine: false,
         id:"edit-damage",
         label: "Damage Dealt",          
         name: "DamageDealt",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","number"],["id","edit-damage"],["name","DamageDealt"],["min","0"],["max","9999"],["class","form-control"],["placeholder","0-9999"]
         ],
         validate:{
@@ -289,13 +286,13 @@ var teamViewModel = {
 
       {
         form:"both",
-        colLength:"10",
+        colLength:"8",
         newLine: true,
         id:"edit-logo",
         label: "Team Logo",
         name: "TeamLogoFile",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["type","file"],["id","edit-logo"],["name","TeamLogoFile"],["class","form-control align-center"],["accept","img/png, img/jpeg"]
         ],
         validate:{
@@ -306,13 +303,13 @@ var teamViewModel = {
       {
         form:"both",
         hidden: true,
-        colLength:"1",
+        colLength:"0",
         newLine: false,
         id:"logo-url",
         label: "Team Logo",
         name: "TeamLogo",
         tag: "input",
-        _attributes:[
+        attributes:[
           ["id","logo-url"],["name","TeamLogo"],["class","form-control align-center"]
         ],
         validate:{

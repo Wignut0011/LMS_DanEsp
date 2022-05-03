@@ -44,9 +44,11 @@ export default class RestStorageService extends StorageService{
             return;
         }
 
+        //Send request
         await fetch(`http://${this.host}/${this.apiName}/${this.ParamBuilder(params)}`)
             .then(out=>out.json())
             .then((resp)=> {
+                //Update teams
                 this.model.teams = resp
 
                 //Update limit
@@ -57,6 +59,21 @@ export default class RestStorageService extends StorageService{
                 console.error(err.message);
                 throw (err);
             });
+
+        //Check if list of states are populated
+        if(!this.stateList){
+            //Send request
+            await fetch(`http://${this.host}/lookups/State`)
+                .then(out=>out.json())
+                .then((resp)=> {
+                    //Update state list
+                    this.stateList = resp;
+                })
+                .catch((err) => {
+                    console.error(err.message);
+                    throw (err);
+                });
+        }
     }
 
     //Get by name
@@ -153,7 +170,7 @@ export default class RestStorageService extends StorageService{
         this.OrderInsert(newTeam);
         this.totalSize++;
 
-        //Increase banished count
+        //Decrease banished count
         this.banishedAm = this.ripple ? this.banishedAm-1 : 0;
     }
 

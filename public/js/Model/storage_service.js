@@ -11,6 +11,7 @@ export default class TeamLocalStorage{
     this.tableOptions = options
     this.defaultLimit = this.limit;
     this.totalSize = 0;
+    this.stateList = null;
   }
 
   //Store data into local storage
@@ -47,76 +48,31 @@ export default class TeamLocalStorage{
     // this.Store();
   }
   async UpdateTeams(){
-    console.log("This should have called in rest_storage_service")
+    console.log("This should have called in rest_storage_service");
   }
   //Get by name
   async Read(getName){
-    console.log("This should have called in rest_storage_service")
-    // let team = this.model.teams.find(element => element.TeamName == getName);
-    // return (typeof team === "undifined" ? (null):(team));
+    console.log("This should have called in rest_storage_service");
   }
 
   //Updates team, for edit button later
   async Update(team){
-    console.log("This should have called in rest_storage_service")
-    // let index = this.model.teams.findIndex(element => element.TeamName == team.Name);
-    // if(index != -1){
-    //   this.model.teams[index] = team;
-    //   this.Store();
-    // }
-    // else{
-    //   this.Create(team);
-    // }
+    console.log("This should have called in rest_storage_service");
   }
 
   //Deletes team from model
   async Delete(id){
-    console.log("This should have called in rest_storage_service")
-    // let index = this.getItemIndex(id);
-    // this.model.teams.splice(index,1);
-    // this.Store();
+    console.log("This should have called in rest_storage_service");
   }
 
   //Sorts the teams
   Sort(col, direction, perm = true){
-    console.log("This should have called in rest_storage_service")
-    // let copy = this.CloneObject(this.model.teams);
-    //
-    // let sorted = copy.sort((a, b) => {
-    //   //Check if string or number
-    //   let a_ = isNaN(a[col]) ? a[col] : parseInt(a[col]);
-    //   let b_ = isNaN(b[col]) ? b[col] : parseInt(b[col]);
-    //
-    //   if (a_ == b_)
-    //     return 0;
-    //   if (a_ < b_)
-    //     return direction == "asc" ? -1 : 1;
-    //   if (a_ > b_)
-    //     return direction == "asc" ? 1 : -1;
-    // });
-    //
-    // if (perm) {
-    //   this.model.teams = sorted;
-    //   this.selCol = col;
-    //   this.direction = direction;
-    //   this.Store();
-    // }
-    // return sorted;
+    console.log("This should have called in rest_storage_service");
   }
 
   //Filters teams for search
   Filter(filterObj){
-    console.log("This should have called in rest_storage_service")
-    // function filterFunc(team) {
-    //   for (let key in filterObj) {
-    //     if ( !team[key].toLowerCase().includes(filterObj[key].toLowerCase())) {
-    //       return false;
-    //     }
-    //   }
-    //   return true;
-    // }
-    // let result = this.model.teams.filter(filterFunc);
-    // return this.CloneObject(result);
+    console.log("This should have called in rest_storage_service");
   }
 
   //Returns copy of object

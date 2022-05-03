@@ -1,7 +1,7 @@
 <% if(formType == "edit"){ %>
   
 
-  <div class="modal-dialog modal-dialog-centered"form-type="edit">
+  <div class="modal-dialog modal-lg modal-dialog-centered"form-type="edit">
     <div class="modal-content">
       <div class="modal-header">
         <img class="img-fluid rounded-circle form-pic modal-pic" src='<%=view.TeamLogo%>' width="50" height="50">
@@ -9,7 +9,7 @@
         
 <% } else{ %>
   
-  <div class="modal-dialog modal-dialog-centered"form-type="add">
+  <div class="modal-dialog modal-lg modal-dialog-centered"form-type="add">
     <div class="modal-content">
       <div class="modal-header">
         <i class="fa-solid fa-circle-plus form-icon"></i>
@@ -25,7 +25,7 @@
         <form class="needs-validation" id="modalForm" novalidate>
 
           <div class="container">
-            <div class="row mb-3">
+            <div class="row mb-4">
               
             <% viewModel.fields.forEach(function(inp){ %>
               <%if(inp.form == formType || inp.form == "both"){%>
@@ -33,9 +33,9 @@
                 
               <% if(inp.newLine){ %>
                   </div>
-                  <div class="row mb-3">
+                  <div class="row">
                 <% } %>
-                <div class="col-<%=inp.colLength%>">
+                <div class="<%=inp.colLength%> mb-4">
 
                   <%if(inp.hidden == true) {%>
                   <div class="form-group" hidden>
@@ -45,7 +45,7 @@
                     
                     <label class="form-label" for="<%=inp.id%>"><%=inp.label%></label>
                     <<%=inp.tag%> 
-                              <% inp._attributes.forEach(function(attr){ %>
+                              <% inp.attributes.forEach(function(attr){ %>
                                  <%=attr[0]%>="<%=attr[1]%>"
                               <% }) %>
                               <% if(inp.validate.required && formType == "edit"){%>
@@ -55,18 +55,19 @@
                               <%}%>
                     >
                       
-                    <% if(inp.tag === "select"){ %>           
-                      <% inp.options.forEach(function(opt){ %>
-                        <% if(opt === "Sel" && formType == "add") {%>
-                          <option selected disabled value=""><%=opt%></option>
-                        <%}else if(opt === "Sel" && formType == "edit"){%>
-                          <option disabled value=""><%=opt%></option>
-                        <%}else if(formType == "edit" && view.State === opt){%>
-                          <option selected value="<%=opt%>"><%=opt%></option>
+                    <% if(inp.tag === "select"){ %>
+                      <% if(formType == "add") {%>
+                        <option selected disabled value="">Sel</option>
+                      <%}else if(formType == "edit"){%>
+                        <option disabled value="">Sel</option>
+                       <%}%>
+                      <%states.forEach(function(opt, ind){ %>
+                        <%if(formType == "edit" && view.State === opt.State){%>
+                          <option selected value="<%=opt.State%>"><%=opt.StateName%></option>
                         <%}else{%>
-                          <option value="<%=opt%>"><%=opt%></option>
+                          <option value="<%=opt.State%>"><%=opt.StateName%></option>
                         <%}%>
-                      <% }) %>                        
+                      <%})%>
                     </<%=inp.tag%>>
                     <%}%>
                     <%if(inp.validate.required){%>

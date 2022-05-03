@@ -1,6 +1,6 @@
 const Team = require("../Models/Team.model.js");
 const util = require("./controller.util.js");
-const Error = require("../Teams/Errors.js")
+const Error = require("../Error/Errors.js")
 const {body, validationResult} = require('express-validator');
 const sql = require("../Models/db");
 const fs = require("fs");

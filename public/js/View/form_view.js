@@ -22,10 +22,12 @@ export default class FormView extends View {
     return (this.currentItemId != null) ? 
       ({formType:"edit",
       view:await this.storage.getTeam(this.currentItemId),
-      viewModel: this.viewModel})
+      viewModel: this.viewModel,
+      states: this.storage.stateList})
       :
       ({formType:"add",
-      viewModel: this.viewModel});
+      viewModel: this.viewModel,
+      states: this.storage.stateList});
   }
 
   //Init Event handlers

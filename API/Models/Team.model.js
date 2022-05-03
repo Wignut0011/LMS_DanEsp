@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const fs = require("fs"); //Image file checking and removing
-const Error = require("../Teams/Errors.js") //Error Object
+const Error = require("../Error/Errors.js") //Error Object
 const DEFAULT_TEAM_LOGO = "img/Def_Team_img/default.png" //Default logo path
 
 const Team = function (team){
@@ -37,9 +37,13 @@ Team.lookups = (param)=>{
 
         //List of Coaches
         case 'Coach':
-            return 'SELECT CoachName AS Coach, TeamName as Team\n ' +
-                'FROM Coaches c\n ' +
+            return 'SELECT CoachName AS Coach, TeamName AS Team ' +
+                'FROM Coaches c ' +
                 'INNER JOIN Teams t ON c.c_id = t.coach_id';
+
+        //List of Home States, this is only used for the drop down menu on the form
+        case 'State':
+            return 'SELECT abr AS State, LocationName AS StateName FROM Home';
 
         //Invalid lookup provided
         default:

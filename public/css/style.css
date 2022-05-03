@@ -438,6 +438,23 @@ h2 {
   transform: translate(0, -2rem);
 }
 
+.super-btn-add {
+  max-width: fit-content;
+  background-color: #7a0c0c;
+  color: white;
+  border-width: 3px;
+  border-color: #7a0c0c;
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+}
+.super-btn-add:hover {
+  background-color: white;
+  color: #7a0c0c;
+  border-color: #7a0c0c;
+}
+
 #ScheduleTable {
   height: 35vh;
 }
