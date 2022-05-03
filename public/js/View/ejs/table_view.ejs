@@ -1,0 +1,30 @@
+<table id='<%=view.remaining.tableID%>' class='<%=view.remaining.tableClasses%>'>
+  <thead>
+    <tr>
+      <% view.view.remaining.tableHead.forEach(function(col){ %>
+        <th scope="col" colspan="<%=col.span%>" class="sortable thead <%=col.otherClasses%>" data-name="<%=col.name%>">
+          <%=col.text%>
+          <i id="<%=col.name%>-Asc" class="fa-solid fa-angle-up" aria-hidden="true" style="display:none"></i>
+          <i id="<%=col.name%>-Desc" class="fa-solid fa-angle-down" aria-hidden="true" style="display:none"></i>
+        </th>
+      <%})%>
+        <th scope="col" colspan="1" class="text-center" data-name="buttons">Edit</th>>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.forEach(function(d){%>      
+      <tr class="text-center" data-id="<%=d.id%>" data-name='<%=d["TeamName"]%>' data-bs-toggle="popover">
+        <th><%=d["State"]%></th>
+        <%view.remaining.tableHead.forEach(function(ce){%>
+          <th><%=d[ce.name]%></th>
+        <%})%>
+        <th class="edit-buttons">
+          <!--Edit Buttons-->
+          <span class="fa-solid fa-pencil btn-edit" modal-type="edit" data-name="<%=d['TeamName']%>" data-id="<%=d['id']%>"></span>
+          <span class="fa-solid fa-face-frown btn-ban" data-id="<%=d['id']%>"></span>
+        </th>
+      </tr>
+    <%})%>
+  </tbody>  
+</table>
+      

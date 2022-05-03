@@ -1,0 +1,41 @@
+
+  <div class="row">
+    <div class="col-9 col-lg self-end">
+      <h1 class="fs-3 title-team"><%=viewModel.topText%></h1>      
+    </div>
+    
+    <div class="col-3 col-sm text-end align-self-center">
+      <div class="search-bar input-group row">
+        <input class="table-search align-middle form-control" id="search-text" placeholder="Search...">
+        <button class="btn super-btn input-group-text fw-bold" id="search-clear">Clear</button>
+      </div>
+    </div>    
+  </div>
+
+  <div class="row">
+    <div class="container table-responsive" id="<%=viewModel.containerId%>"></div>
+  </div>
+
+  <div class="row justify-content-between mb-3">
+    <div class="col-3 text-start">
+      <button type="button" class="btn super-btn fw-bold" id="reset-btn">Retrieve Teams</button>
+    </div>
+    <div class="col-5 bottom-table-tab text-center">
+      <button class="container super-btn col-auto text-center" id="table-show-more" >
+        <p>Show More Teams</p>
+        <i class="fa-solid fa-angles-down"></i>
+    </div>
+    <div class="col-3 text-end">
+      <button type="button" class="btn super-btn fw-bold" id="add-btn">Add New Team</button>
+    </div>
+  </div>
+
+  <div class="row alert-row">
+    <div class="col-8 col-sm text-start">
+      <div class="super-alert" id="<%=viewModel.alertID%>"></div>
+    </div>
+  </div>
+
+<!--The modal was causing issues with the backdrop being over the modal; even after editing it's z-index value. So I just put it in the bottom of the index and edit it with Jquery in an event handler since there as no reason to generate it like this.-->
+
+</div>

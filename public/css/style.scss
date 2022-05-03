@@ -1,0 +1,527 @@
+@import "mixin";
+@import "variables";
+
+body{
+  overflow-x: hidden;
+}
+.title{
+  font-size:60px;
+  font-weight: 900;
+}
+.descript{
+  font-size:25px;  
+}
+.inbetweener{
+  background-color: $accent;
+  color: $lightText;
+}
+.whoosh{
+  max-width: max-content;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 0 0 10px 100px; //Whoosh thing for titles
+  border-bottom: 12px solid $accent;
+}
+
+@media (max-width: $homeBp1){
+  .title{
+    font-size:35px;
+  }
+  .descript{
+    font-size:20px;  
+  }
+}
+
+
+//---BACKGROUND IMAGES---
+
+
+.bg-elem{
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  position: fixed;
+}
+.bg-dim{
+  @extend .bg-elem;
+  background: $bgOverlay;
+  opacity: .7;
+  z-index: -1;
+}
+.bg-image{
+  @extend .bg-elem;
+  background:  #000 center/cover no-repeat fixed;
+  z-index: -2;  
+}
+#home_bg{  
+  background-image: url("../img/bg/home_bg.jpg");
+}
+#team_bg{
+  background-image: url("../img/bg/teams_bg.jpg");
+}
+#about_bg{
+  background-image: url("../img/bg/about_bg.jpg");
+}
+#watch_bg{
+  background-image: url("../img/bg/watch_bg.jpg");
+}
+
+//---ASIDE PANEL---
+.aside-btn {
+  position: fixed;
+  font-size: 20px;
+  left: -1rem;
+  opacity: .8;
+  background-color: $bgMain;
+  color:$accent;
+  transition: .5s;
+
+  &:hover, &:focus{
+    font-size: 21px;
+    left: 0;
+    opacity: 1;
+    background-color: $accent;
+    color: $bgMain;
+  }
+}
+.aside-close{
+  position: absolute;  
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+  
+  background: none;
+  border-style:none;
+
+  transform: rotate(0deg);
+  font-size: 36px;
+  color:$accent;
+  transition: .5s;
+  
+  &:hover{
+    color: $btnBgLight;
+    transform: rotate(540deg);
+  }
+}
+.sidepanel {
+  top:6rem;
+  width: fit-content;
+  max-width:0;
+  max-height: fit-content;
+  position: fixed; // Stay in place 
+  z-index: 9999; // Stay on top 
+  left: 0;
+
+  border: {
+    width: 0;
+    color:$accent;
+    style: solid;
+    top-left-radius: 200px 40px;
+    top-right-radius: 100px 20px;
+    bottom-left-radius: 200px 40px;
+    bottom-right-radius: 50px 20px;
+  }
+  background: linear-gradient(90deg, rgba($bgMain,.95) 20%, rgba($bgMainEndGradientH, 0.95) 100%);
+  
+  overflow-x: hidden; // Disable horizontal scroll 
+  padding-top: 60px; // Place content 60px from the top 
+  transition: 0.5s; // 0.5 second transition effect to slide in the sidepanel 
+}
+.aside-contents{
+  white-space: nowrap;
+
+  & > h3{
+    margin: 1rem 1rem 1.5rem 1rem;
+  }
+}
+.table-aside{
+  border-style: none!important;
+  background:none!important;
+}
+
+
+//---HEADER NAVBAR---
+
+
+#logo-img{
+  margin: -25% -25% -25% -25%;
+  transform: rotate(15deg);  
+}
+#logo-banner{
+  border: {
+    right: 6px solid $accent;
+    bottom-right-radius: 35px;
+    top-right-radius: 10px 35px; //Little swoop thing
+  }
+  font-weight: bolder;
+  width: 11rem; //Defines the width for navbar-brand to reference
+  color:$accent;
+}
+.navbar {
+	margin:0 !important;
+	padding: 0px !important;
+  
+  border: {
+    bottom: 6px solid $accent;
+    radius: 0 0 10px 10px;
+  }
+  
+  background: $bgMain;
+  background: linear-gradient(180deg, $bgMain 10%, $bgMainEndGradient 100%);
+}
+.navbar-brand {
+  width: 50%; //Needed to adjust the size of the logo. Needs to be here instead of logo-img due to funky stuff happening
+}
+
+
+@media (min-width:380px){
+  #footer .container{
+    text-align:center;
+  }
+}
+
+
+//---Tab Buttons---
+
+
+#header{
+  min-height:50px;
+  align-items: end; //Logo adds height, tabs need to be at the bottom
+}
+.active{
+  color: $bgMain; //Replace Bootstrap default color
+}
+.nav-link, .nav-link:focus, .nav-link:hover{
+  color: $accent; //Replace Bootstrap default color
+  font-weight: 700;
+}
+
+
+//---TAB CONTENTS---
+
+.ratio{
+  max-width:80%;
+}
+.tab-pane>.container-fluid{
+  height:100%;
+  width:100vw;
+  align-items:center;
+  z-index:0;
+  color:$accent;
+}
+h1{
+  font-weight: bolder;
+}
+h2{
+  font-wieght: 700;
+}
+
+.base-container{ //Main div box look
+  @include default-base;
+  color:$accent;  
+  border-style: solid;
+}
+
+.sidebase{ //Main div box look  
+  @include default-base;
+  min-width: 15rem;
+  max-width: fit-content;
+  
+  border-style: solid solid solid none;
+}
+.mainbase{
+  min-width:1059px;
+}
+.div-pad, .sidecontent{
+  padding: 1rem;
+}
+.n-size{
+  min-width: max-content;
+}
+.main-section{
+  margin: {
+    top: 6rem;
+    bottom: 6rem;
+  }
+}
+.rule-title > .title{
+  color: $bgMain;
+}
+.schedule-title-fix {  
+  justify-content:right;
+  
+  & > div{
+  max-width:60vw;
+  }
+  & > table{
+    max-width:inherit;
+    min-width:fit-content;
+  }
+}
+.schedule-title{
+  text-align: center;
+  padding: .5rem 0 0 2rem;
+  margin-bottom: 0;
+  background-color: white;
+  color: $bgMain;
+  border-top-left-radius: 100px 30px;
+}
+
+@media (min-width:1920px){
+  .sidebase{
+    position: absolute;
+  }
+}
+@media (max-width: 1310px) {
+  .sidebase{
+    margin-top: 75px;    
+    min-width:fit-content;
+    justify-content:center;
+    border-style: solid;
+    background: linear-gradient(180deg, $bgMain 20%, $bgMainEndGradient 100%);
+  }
+  .main-section{    
+    justify-content:center;    
+  }  
+}
+@media (max-width: 1200px){
+  .mainbase{
+    min-width:75%;
+  }  
+}
+@media (max-width: $homeBp1){
+  .ratio{
+    max-width:inherit!important;
+  }
+  .rule-title{
+    padding: 1rem 0 1rem 0;
+    margin-bottom: 3rem;
+    border-bottom: 12px solid $accent;
+    border-radius: 0 0 10px 100px; //Another whoosh thing for the rules section in home
+    border-color: $bgMain;
+  }
+  .schedule-title-fix{
+    border-bottom: none;    
+  }
+  .da-rule{
+    text-align: center;
+    flex-grow: 1;
+  }  
+  .da-pic{
+    text-align:center;
+  }
+}
+@media (min-width: $homeBp1){
+  .rule-title{
+    margin-bottom: 0;
+  }
+  .da-rule{
+    text-align: right;
+    flex-grow: 8;
+  }  
+  .da-pic{
+    text-align: center;
+  }
+}
+@media (max-width: 700px){
+  #TruckIMG{
+    max-width:inherit!important;
+  }
+}
+@media (max-width: 356px){
+  body {
+    overflow-x: visible;
+  }
+}
+
+
+
+//--TEAMS--
+
+.alert-row{
+  position:fixed;
+  top:25vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.super-btn{
+  @include super-btn-default($btnBg);
+}
+.super-btn-no{
+  @include super-btn-default($tableHoverthead);
+}
+.title-team{
+  @include right-title-tab;
+}
+.self-end{
+  align-self: self-end;
+}
+.search-bar{
+  position:relative
+}
+.search-bar > button{
+  position: absolute;
+  top:0px;
+  right:0px;
+}
+#TeamsTable{
+  vertical-align: middle;
+}
+
+#table-show-more{
+  @include right-title-tab;
+  transition: .5s;
+  position: relative;
+  padding: 0.25rem 2rem 0 2rem!important;
+  overflow: hidden;
+  font-size: 120%;
+  font-weight: bolder;
+  border-radius: 0 0 3rem 3rem;
+  border-width: 0 6px 4px 6px!important;
+  border-style: solid!important;
+  border-color: $accent!important;
+  &:hover{
+    @include right-title-tab-dark;
+    border-radius: 0 0 4rem 4rem;
+    padding-bottom: 2rem!important;
+    i{
+      opacity:100;
+      transform: translate(0, 0);
+    }
+  }
+  i{
+    color: $accent;
+    transition: .5s;
+    position:absolute;
+    opacity:0;
+    transform: translate(0, -2rem);
+  }
+}
+#ScheduleTable{
+  @extend #TeamsTable;
+  height: 35vh;
+}
+.base-table thead th{
+  margin-left:5px;
+  background: linear-gradient(180deg, $bgMain 30%, $tableHoverthead 100%);
+  color:$accent;
+}
+.table-hover{
+  thead th{
+    cursor: pointer;
+
+    transition: .5s;
+  }
+  tbody tr th{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    transition: .3s;
+  }
+  thead:hover th{
+    background: $tableHoverthead;
+  }
+  
+  tbody tr:hover th{  
+    color:$accent;
+    text-shadow:1px 0 0 $tableHoverColor,0 1px 0 $tableHoverColor,-1px 0 0 $tableHoverColor,0 -1px 0  $tableHoverColor;
+    background-color: $bgHover;
+  }
+}
+
+.popover-header, .super-modal .modal-header{
+  background: linear-gradient(180deg, $tableHoverthead -90%, $accent 40%);
+  border-bottom: 1px solid;
+  color: $bgHover;
+  font-weight: bold;
+  font-size: large;
+}
+.super-modal .modal-title{
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+.popover-body, .super-modal .modal-footer{
+  background: linear-gradient(0deg, $tableHoverthead -90%, $accent 30%);
+  font-weight: 500;
+}
+.form-body{
+  background: $accent;
+  background: linear-gradient(0deg, $tableHoverthead -90%, $accent 20%, $accent 80%, $tableHoverthead 190%);
+}
+.form-label{
+  // @include right-title-tab-dark;
+  // text-align:left !important;
+  margin-bottom: 0;
+  padding: 0 .5rem 0 .5rem;
+  background-color: $tableHoverthead;
+  color: $accent;
+  border-radius: 3px 10px 0 0;
+}
+
+//Edit the bootstrap form border radius to attach to the label better
+form{
+  &.form-control,&>.form-select{
+    border-top-left-radius: 0!important;
+  }
+}
+
+@media (max-width:450px){
+  .title-team{
+    padding-right: 25px;
+  }
+  .title-team, .schedule-title{
+    font-size:20px!important;    
+  }
+}
+@media (max-width: 768px){
+  .title-team{
+    padding-right: 25px;
+  }
+  .search-bar > button{
+    border-radius: 0 .25rem .25rem 0;
+  }
+}
+@media (max-width:1199px){
+  .schedule-fix{
+    justify-content:center;
+  }
+  .schedule-title-fix{    
+    margin-top:0;
+  }
+}
+
+
+//--ABOUT--
+
+
+.about-quote{
+  padding-top: 1rem;
+  text-align: center;
+  background-color: $bgQuoteRGBA_T;
+  box-shadow: 0px 0px 30px 30px $bgQuoteRGBA_T;
+}
+figcaption{
+  padding-top:.2rem;
+}
+.about-text .base-container{
+  border: 4px solid $accent;
+  border-top:0;
+  border-radius: 0 0 10px 10px;
+}
+
+@media (max-width: 768px){
+  .about-text{
+    text-align: center!important;
+  }
+}
+
+
+//--FOOTER--
+
+
+#footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

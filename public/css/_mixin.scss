@@ -1,0 +1,36 @@
+@mixin default-base {
+  border: 6px $accent;
+  border-style: solid;
+  background: $bgMain;
+  background: linear-gradient(90deg, $bgMain 20%, $bgMainEndGradient 100%);
+}
+
+@mixin super-btn-default($color){
+  max-width: fit-content;
+  background-color: $color;
+  color:$accent;
+  border-width: 3px;
+  border-color: $color;
+  &:hover{
+    background-color: $accent;
+    color: $color;
+    border-color: $color;
+  }
+}
+@mixin right-title-default{
+  margin-bottom: 0;
+  padding: .5rem 2rem 0 .4rem;
+  text-align: center;
+  border-top: 12px solid$accent;
+  border-radius: 10px 100px 0 0;
+}
+@mixin right-title-tab{
+  @include right-title-default;
+  color: $bgMain;
+  background-color: $accent;
+}
+@mixin right-title-tab-dark{
+  @include right-title-default;
+  color: $accent;
+  background-color: $bgMain;
+}
